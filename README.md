@@ -149,4 +149,5 @@ You can now use your queryTVMazeAPI function, which takes one argument, in `Sear
 Implement error handling for the fetch. Re-do the request __x__ times before you message the user that it failed.
 
 ### Further
-Create functionality for infinite scroll of tvmaze's full schedule: [https://www.tvmaze.com/api#full-schedule](https://www.tvmaze.com/api#full-schedule)
+Create functionality for infinite scroll of tvmaze's full schedule: [http://api.tvmaze.com/shows?page=1](http://api.tvmaze.com/shows?page=1)
+Hint: every time you get to the bottom of the window and get something, increment the current "page".
