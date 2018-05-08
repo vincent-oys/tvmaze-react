@@ -90,3 +90,8 @@ Create the ability to sort on different fields.
 
 ### Further
 Link the show result to another part of the TVmaze api. By hand, download and include the results of that api search to use in your react app.
+
+## React Router
+Change the top level of your app to use react router.
+
+For each of the different pages you implement, create a route for it. If that route has queries or arguments make your app handle those as well.
