@@ -86,4 +86,7 @@ We will need three functions defined on the `SearchContainer` component to provi
 Create the ability to sort on different fields.
 
 ### Further
-Link the show result to another part of the TVmaze api. By hand, download and include the results of that api search to use in your react app.
+Use ajax to get live data for your app. Remember to use the `componentDidMount` method for your ajax calls.
+
+### Further
+Link the show result to another part of the TVmaze api. For example actors or schedule.
