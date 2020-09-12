@@ -61,8 +61,8 @@ export default class Results extends Component {
 
         let movie = this.state.movies.map((item, index) => {
             return (
-                <div key={index}>
-                    {item.show.image ? <img src={item.show.image.medium} alt="" /> : <p>{item.show.name}'s Image Not Available</p>}
+                <div key={index} style={{ margin: "5px" }}>
+                    {item.show.image ? <img src={item.show.image.medium} alt="" /> : <p style={{ width: "210px", height: "295px", margin: "0", boxSizing: "border-box", border: "1px solid black", display: "flex", justifyContent: "center", alignItems: "center" }}>Image Not Available</p>}
                     <p>{item.show.name}</p>
                     <p>{item.score}</p>
                 </div>
@@ -80,7 +80,7 @@ export default class Results extends Component {
                     <option value="asc-name">Name(Ascending)</option>
                     <option value="dsc-name">Name(Descending)</option>
                 </select>
-                <div>{movie}</div>
+                <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>{movie}</div>
             </div>
         )
     }
