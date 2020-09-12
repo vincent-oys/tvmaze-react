@@ -13,7 +13,6 @@ export default class Home extends Component {
     }
 
     onChangeHandler = (e) => {
-        // console.log(e.target.value)
         this.setState({
             defaultValue: e.target.value
         })

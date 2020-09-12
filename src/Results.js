@@ -6,7 +6,7 @@ export default class Results extends Component {
     constructor() {
         super()
         this.state = {
-            movies: []
+            movies: [],
         }
     }
 
@@ -25,6 +25,37 @@ export default class Results extends Component {
             })
     }
 
+    onChange = (e) => {
+        switch (e.target.value) {
+            case "asc-score":
+                this.setState((prevState) => ({
+                    movies: prevState.movies.sort((a, b) => a.score - b.score),
+                }))
+                break
+            case "dsc-score":
+                this.setState((prevState) => ({
+                    movies: prevState.movies.sort((a, b) => b.score - a.score),
+                }))
+                break
+            case "asc-name":
+                this.setState((prevState) => ({
+                    movies: prevState.movies.sort((a, b) => (a.show.name < b.show.name) ? -1 : (a.show.name > b.show.name) ? 1 : 0),
+                }))
+                break
+            case "dsc-name":
+                this.setState((prevState) => ({
+                    movies: prevState.movies.sort((a, b) => (b.show.name < a.show.name) ? -1 : (b.show.name > a.show.name) ? 1 : 0),
+                }))
+                break
+            default:
+                this.setState((prevState) => ({
+                    movies: prevState.movies,
+                }))
+                break
+        }
+    }
+
+
     render() {
         let { reset } = this.props
 
@@ -40,7 +71,15 @@ export default class Results extends Component {
 
         return (
             <div>
-                <button onClick={(e) => { reset(e) }}>Search Again</button>
+                <button onClick={(e) => { reset(e) }}>Search Again</button><br />
+                <label>Sort by:</label>
+                <select onChange={(e) => { this.onChange(e) }}>
+                    <option value="">Please Select</option>
+                    <option value="asc-score">Score(Ascending)</option>
+                    <option value="dsc-score">Score(Descending)</option>
+                    <option value="asc-name">Name(Ascending)</option>
+                    <option value="dsc-name">Name(Descending)</option>
+                </select>
                 <div>{movie}</div>
             </div>
         )
